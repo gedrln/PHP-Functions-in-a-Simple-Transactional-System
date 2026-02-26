@@ -1,21 +1,15 @@
 <?php
-// ==============================
-// Retrieve POST Data
-// ==============================
+
 $itemName = strtoupper($_POST['item_name']);  // Built-in #1
 $price = $_POST['price'];
 $quantity = $_POST['quantity'];
 
-// ==============================
-// User-Defined Functions
-// ==============================
 
-// 1. Compute Subtotal
+
 function computeSubtotal($price, $quantity) {
     return $price * $quantity;
 }
 
-// 2. Compute Discount (5% if subtotal > 1000)
 function computeDiscount($subtotal) {
     if ($subtotal > 1000) {
         return $subtotal * 0.05;
@@ -38,9 +32,7 @@ function formatCurrency($amount) {
     return number_format($amount, 2); // Built-in #2
 }
 
-// ==============================
-// Processing
-// ==============================
+
 
 $subtotal = computeSubtotal($price, $quantity);
 $discount = computeDiscount($subtotal);
@@ -156,4 +148,5 @@ $itemLength = strlen($itemName); // Built-in #3
 </div>
 
 </body>
+
 </html>
